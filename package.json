@@ -1,0 +1,14 @@
+{
+  "name": "api-jwt",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240423.0",
+    "typescript": "^5.4.5",
+    "wrangler": "3.52.0"
+  },
+  "private": true,
+  "scripts": {
+    "start": "wrangler dev",
+    "deploy": "wrangler deploy"
+  }
+}
