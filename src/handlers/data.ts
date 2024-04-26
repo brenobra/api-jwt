@@ -1,9 +1,12 @@
 import { decode } from 'https://cdn.skypack.dev/jose';
 
-async function handleData(request) {
+export async function handleData(request: Request): Promise<Response> {
   const authHeader = request.headers.get('Authorization');
-  const token = authHeader && authHeader.split(' ')[1];
-  if (!token) return new Response('Authorization required', { status: 401 });
+  const token = authHeader?.split(' ')[1];
+
+  if (!token) {
+    return new Response('Authorization required', { status: 401 });
+  }
 
   try {
     const user = await decode(new Uint8Array(new TextEncoder().encode('your-secret-key-here')), token, 'HS256');

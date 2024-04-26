@@ -2,11 +2,11 @@ import { handleLogin } from './handlers/login';
 import { handleData } from './handlers/data';
 import { handleAbout } from './handlers/about';
 
-addEventListener('fetch', event => {
+addEventListener('fetch', (event: FetchEvent) => {
   event.respondWith(handleRequest(event.request));
 });
 
-async function handleRequest(request) {
+async function handleRequest(request: Request): Promise<Response> {
   const { pathname } = new URL(request.url);
 
   switch (pathname) {
