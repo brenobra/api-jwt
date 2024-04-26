@@ -1,4 +1,4 @@
-import { encode } from 'https://cdn.skypack.dev/jose';
+import { jwtSign } from 'https://cdn.skypack.dev/jose';
 
 export async function handleLogin(request: Request): Promise<Response> {
   const user = { id: 1, username: "testuser" }; // Example user

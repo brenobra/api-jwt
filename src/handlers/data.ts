@@ -1,4 +1,4 @@
-import { decode } from 'https://cdn.skypack.dev/jose';
+import { jwtVerify } from 'https://cdn.skypack.dev/jose';
 
 export async function handleData(request: Request): Promise<Response> {
   const authHeader = request.headers.get('Authorization');
